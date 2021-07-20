@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col"></div>
+    <div class="col-8">
+        <div class="card mt-5 border-primary">
+        <div class="card-header">
+            <h2>Profile</h2>
+        </div>
+            <div class="card-body">
+                <img src="..." class="card-img-top" alt="...">
+                <div class=row>
+                    <div class="col">
+                        <h4 class="card-title"><%= @model.username %></h4> 
+                    </div>
+                    <div class="col">
+                    <h5> Followers: <%= @model.followers.count%> |  Following: <%= @model.following.count%></h5>
+                    </div>
+                </div>
+                <p class="card-text"><%= @model.email%></p>
+                <p class="card-text"><small class="text-muted">Bio</small></p>
+                <div>
+                    <% if current_model.id == @model.id%>
+                        <%= link_to "Edit Profile", edit_model_registration_path, class:"btn btn-sm btn-outline-primary"%>
+                    <% else %>
+                        <% if @rel.present?%>
+                            <%=link_to "Unfollow", relationship_path(@rel), method: :delete, class:"btn btn-sm btn-outline-primary mr-2"%>
+                        <% else %>
+                            <%=link_to "Follow", model_relationships_path(@model),method: :post, class:"btn btn-sm btn-outline-primary mr-2"%>
+                        <% end %>
+                    <% end %>
+                    <%= link_to "Back", root_path, class:"btn btn-sm btn-outline-primary mr-2"%>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col"></div>
+</div>

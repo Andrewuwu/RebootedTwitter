@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">New Tweet</h5>
+
+    <%= form_with model: @tweet do |form| %>
+      <div class="field form-group">
+        <%= form.text_area :body, class:"form-control", placeholder:"Tweet"%>
+      </div>
+      <div class="field form-group">
+        <%= form.text_field :mood, class:"form-control", placeholder:"Mood" %>
+      </div>
+      <div>
+        <%= form.number_field :model_id, id: :tweet_model_id, value: current_model.id, type: :hidden%>
+        
+      </div>
+        <br>
+      <div class="actions">
+        <%= form.submit "Post", class:"btn btn-outline-primary" %>
+      </div>
+    <% end %>  
+
+  </div>
+</div>

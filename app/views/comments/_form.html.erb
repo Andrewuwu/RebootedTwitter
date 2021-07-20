@@ -1,0 +1,22 @@
+ <%= form_with model: [@tweet, @tweet.comments.build] do |form| %>
+        <div class="row">
+            <div class="col">
+                <div class="field form-group">
+                    <%= form.text_area :comment, class:"form-control"%>
+                </div>
+            </div>
+            <div class="col">
+                <div>
+                    <%= form.number_field :model_id, id: :comment_model_id, value: current_model.id, type: :hidden%>
+                </div>
+            </div>
+        </div>
+        <div>
+            <%= form.text_field :commenter, value: current_model.username, type: :hidden%>
+        </div>
+        <div class="actions">
+            <div class="row">
+                <%= form.submit class:"btn btn-sm btn-outline-primary mr-3 ml-3"%>
+                <%= link_to "Done", root_path, class:"btn btn-sm btn-outline-primary"%>
+        </div>
+<% end %>
