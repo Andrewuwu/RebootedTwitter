@@ -9,7 +9,6 @@ class RelationshipsController < ApplicationController
 
     def show
         @model = Model.find(params[:model_id])
-        @rel = @model.followers.find_by(follower: current_model)
     end
 
     def destroy

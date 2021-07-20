@@ -2,6 +2,7 @@ class TweetsController < ApplicationController
     before_action :authenticate_model!
     def index
         @tweets = Tweet.all.order("created_at DESC")
+        @tweet = Tweet.new
     end
 
     def show

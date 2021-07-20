@@ -24,6 +24,7 @@
                                 </div>
                             </div>
                             <h5> Followers: <%= @model.followers.count%> |  Following: <%= @model.following.count%></h5>
+                            <%= link_to "Show Followers", model_relationship_path(@model.id)%>
                             
 
                         </div>
