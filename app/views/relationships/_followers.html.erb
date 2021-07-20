@@ -1,0 +1,3 @@
+<% @model.followers.each do |follower|%>
+    <%= link_to "@" + follower.follower.username , model_path(follower.follower_id)%>
+<% end %>

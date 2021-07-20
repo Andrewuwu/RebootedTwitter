@@ -7,6 +7,11 @@ class RelationshipsController < ApplicationController
         redirect_to model_path(@model)
     end
 
+    def show
+        @model = Model.find(params[:model_id])
+        @rel = @model.followers.find_by(follower: current_model)
+    end
+
     def destroy
         @rel = Relationship.find(params[:id])
         @rel.destroy
