@@ -9,7 +9,6 @@ gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
-
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
@@ -28,6 +27,7 @@ end
 
 group :production do
   gem 'pg', '~> 1.2', '>= 1.2.3'
+  gem 'rails_12factor', '0.0.2'
 end
 
 group :test do
