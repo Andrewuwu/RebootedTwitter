@@ -1,3 +1,8 @@
-<% @model.following.each do |following|%>
-    <%= link_to "@" + following.followed.username , model_path(following.followed_id)%>
-<% end %>
+
+<ul class="list-group">
+    <% @model.following.each do |following|%>
+        <li class="list-group-item">
+            <%= link_to "@" + following.followed.username , model_path(following.followed_id)%>
+        </li>
+    <% end %>
+</ul>

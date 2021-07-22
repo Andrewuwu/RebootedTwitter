@@ -1,3 +1,7 @@
-<% @model.followers.each do |follower|%>
-    <%= link_to "@" + follower.follower.username , model_path(follower.follower_id)%>
-<% end %>
+<ul class="list-group">
+    <% @model.followers.each do |follower|%>
+        <li class="list-group-item">
+            <%= link_to "@" + follower.follower.username , model_path(follower.follower_id)%>
+        </li>
+    <% end %>
+</ul>   

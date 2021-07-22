@@ -17,8 +17,8 @@
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
-                    <h5> Followers: <%= @model.followers.count%> |  Following: <%= @model.following.count%></h5>
-                    <%= link_to "Show Followers", model_relationship_path(@model.id)%>
+                    <h5><%= link_to "Followers: " + @model.followers.count.to_s, model_relationship_path(@model.id)%> |
+                        <%= link_to "Following: " + @model.following.count.to_s, model_relationship_path(@model.id)%></h5>
                 </div>
             </div>
             <p class="card-text"><%= @model.email%></p>
