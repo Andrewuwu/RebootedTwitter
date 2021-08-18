@@ -1,0 +1,14 @@
+<h1> SPACE </h1>
+<div class='card p-3' >
+<%= form_with model: @cookie_clicker do |form| %>
+        <div class="field form-group">
+          <%= form.number_field :click_count, value: @cookie_clicker.click_count + 1, class:"form-control"%>
+        </div>
+        <div>
+          <%= form.number_field :model_id, value: current_model.id, type: :hidden %>
+        </div>
+        <div class="actions">
+          <%= form.submit 'MORE COOKIES', class:"btn btn-outline-primary" %>
+        </div>
+<% end %> 
+</div> 

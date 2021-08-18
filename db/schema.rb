@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_20_021630) do
+ActiveRecord::Schema.define(version: 2021_08_18_004056) do
 
   create_table "comments", force: :cascade do |t|
     t.text "comment"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 2021_07_20_021630) do
     t.index ["tweet_id"], name: "index_comments_on_tweet_id"
   end
 
+  create_table "cookie_clickers", force: :cascade do |t|
+    t.integer "click_count"
+    t.integer "model_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["model_id"], name: "index_cookie_clickers_on_model_id"
+  end
+
   create_table "models", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -34,6 +42,7 @@ ActiveRecord::Schema.define(version: 2021_07_20_021630) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
     t.text "bio"
+    t.integer "click_counter"
     t.index ["email"], name: "index_models_on_email", unique: true
     t.index ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true
   end
@@ -55,4 +64,5 @@ ActiveRecord::Schema.define(version: 2021_07_20_021630) do
   end
 
   add_foreign_key "comments", "tweets"
+  add_foreign_key "cookie_clickers", "models"
 end

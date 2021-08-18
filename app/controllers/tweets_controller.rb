@@ -28,7 +28,7 @@ class TweetsController < ApplicationController
 
     def update
         @tweet = Tweet.find(params[:id])
-        if @tweet.save(tweet_params)
+        if @tweet.update(tweet_params)   
             redirect_to root_path
         else
             render :new

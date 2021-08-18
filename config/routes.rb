@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'cookie_clicker/index'
   devise_for :models
   root "tweets#index"
     resources :models, only: [:show] do
@@ -7,5 +8,7 @@ Rails.application.routes.draw do
     resources :relationships, only: [:destroy]
     resources :tweets do
       resources :comments
-    end  
+    end
+    resources :cookie_clickers
+  
 end

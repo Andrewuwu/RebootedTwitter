@@ -1,0 +1,2 @@
+module CookieClickerHelper
+end

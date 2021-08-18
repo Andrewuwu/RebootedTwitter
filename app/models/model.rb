@@ -1,6 +1,7 @@
 class Model < ApplicationRecord
   has_many :tweets
   has_many :comments
+  has_one :cookie_clicker
   has_many :following, foreign_key: "follower_id", class_name: "Relationship"
   has_many :followers, foreign_key: "followed_id", class_name: "Relationship"
   # Include default devise modules. Others available are:
