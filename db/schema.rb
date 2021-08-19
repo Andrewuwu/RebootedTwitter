@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_18_004056) do
+ActiveRecord::Schema.define(version: 2021_08_19_004639) do
 
   create_table "comments", force: :cascade do |t|
     t.text "comment"
     t.integer "tweet_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "commeter"
     t.integer "model_id"
     t.string "commenter"
     t.index ["model_id"], name: "index_comments_on_model_id"
